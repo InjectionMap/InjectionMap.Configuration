@@ -1,6 +1,6 @@
 ﻿using InjectionMap.Configuration.Test.Data;
 
-namespace InjectionMap.Configuration.Test
+namespace InjectionMap.Configuration.FailTest
 {
     public class ObjectTypeOne : IKeyOne
     {

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Linq;
 using NUnit.Framework;
+using InjectionMap.Configuration.Test.Data;
 
 namespace InjectionMap.Configuration.Test
 {
@@ -21,6 +22,18 @@ namespace InjectionMap.Configuration.Test
             using (var mapper = new InjectionMapper())
             {
                 mapper.Initialize();
+            }
+
+            using (var resolver = new InjectionResolver())
+            {
+                var keyOne = resolver.Resolve<IKeyOne>();
+                Assert.IsNotNull(keyOne);
+
+                var keyTwo = resolver.Resolve<IKeyTwo>();
+                Assert.IsNotNull(keyTwo);
+
+                var typeOne = resolver.Resolve<ObjectTypeOne>();
+                Assert.IsNotNull(keyTwo);
             }
         }
     }

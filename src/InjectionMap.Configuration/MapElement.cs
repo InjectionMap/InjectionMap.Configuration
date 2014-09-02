@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace InjectionMap.Configuration
 {
     public class MapElement : ConfigurationElement
     {
+        /// <summary>
+        /// The key type that is used to mark the mapping
+        /// </summary>
         [ConfigurationProperty("key", IsKey = true, IsRequired = true)]
         public string Key
         {
@@ -22,6 +20,9 @@ namespace InjectionMap.Configuration
             }
         }
 
+        /// <summary>
+        /// The type that will be mapped and resolved
+        /// </summary>
         [ConfigurationProperty("for", IsRequired = false)]
         public string For
         {
@@ -35,7 +36,10 @@ namespace InjectionMap.Configuration
             }
         }
 
-        [ConfigurationProperty("toSelf", IsRequired = false)]
+        /// <summary>
+        /// Defines if the key type is mapped to itsself an has to be resolved
+        /// </summary>
+        [ConfigurationProperty("toSelf", DefaultValue = false, IsRequired = false)]
         public bool ToSelf
         {
             get

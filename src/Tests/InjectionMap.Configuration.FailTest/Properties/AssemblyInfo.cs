@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("InjectionMap.Configuration.Test")]
+[assembly: AssemblyTitle("InjectionMap.Configuration.FailTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("InjectionMap.Configuration.Test")]
+[assembly: AssemblyProduct("InjectionMap.Configuration.FailTest")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("71d0092d-4349-4c48-9dd1-53bc4ff1ac13")]
+[assembly: Guid("2b22019a-814a-41cc-9157-7f40279484b0")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB545EC5-3FA1-4540-9403-00DB952E6520}</ProjectGuid>
+    <ProjectGuid>{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InjectionMap.Configuration.Test</RootNamespace>
-    <AssemblyName>InjectionMap.Configuration.Test</AssemblyName>
+    <RootNamespace>InjectionMap.Configuration.FailTest</RootNamespace>
+    <AssemblyName>InjectionMap.Configuration.FailTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,31 +35,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InjectionMap, Version=1.4.7.0, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\InjectionMap.1.4.7\lib\net45\InjectionMap.dll</HintPath>
+    <Reference Include="InjectionMap">
+      <HintPath>..\packages\InjectionMap.1.4.7\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
-      <HintPath>..\..\..\packages\NUnitTestAdapter.1.1\lib\nunit.core.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.1.1\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.core.interfaces">
-      <HintPath>..\..\..\packages\NUnitTestAdapter.1.1\lib\nunit.core.interfaces.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.1.1\lib\nunit.core.interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="nunit.util">
-      <HintPath>..\..\..\packages\NUnitTestAdapter.1.1\lib\nunit.util.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.1.1\lib\nunit.util.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="NUnit.VisualStudio.TestAdapter">
-      <HintPath>..\..\..\packages\NUnitTestAdapter.1.1\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <HintPath>..\packages\NUnitTestAdapter.1.1\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -79,6 +77,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\InjectionMap.Configuration\InjectionMap.Configuration.csproj">
       <Project>{126eb35d-a01c-413d-af66-7f6ebd2e5e68}</Project>
       <Name>InjectionMap.Configuration</Name>
@@ -87,10 +89,6 @@
       <Project>{856d5a2e-afd5-46e0-9e8d-1326240dd00e}</Project>
       <Name>InjectionMap.Configuration.Test.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
