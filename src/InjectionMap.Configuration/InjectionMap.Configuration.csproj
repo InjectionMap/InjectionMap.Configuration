@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InjectionMap">
-      <HintPath>..\packages\InjectionMap.1.4.6\lib\net45\InjectionMap.dll</HintPath>
+      <HintPath>..\..\packages\InjectionMap.1.4.6\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InjectionMapElement.cs" />
-    <Compile Include="InjectionMapElementCollection.cs" />
+    <Compile Include="ConfigurationComponentMapper.cs" />
+    <Compile Include="IConfigurationComponentMapper.cs" />
+    <Compile Include="MapElement.cs" />
+    <Compile Include="MapElementCollection.cs" />
     <Compile Include="InjectionMapperExtension.cs" />
     <Compile Include="InjectionMapSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

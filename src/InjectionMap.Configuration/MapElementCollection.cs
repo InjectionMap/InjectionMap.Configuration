@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 
 namespace InjectionMap.Configuration
 {
-    public class InjectionMapElementCollection : ConfigurationElementCollection, IEnumerable<InjectionMapElement>
+    [ConfigurationCollection(typeof(MapElement))]
+    public class MapElementCollection : ConfigurationElementCollection, IEnumerable<MapElement>
     {
-        private readonly List<InjectionMapElement> _elements;
+        private readonly List<MapElement> _elements;
 
-        public InjectionMapElementCollection()
+        public MapElementCollection()
         {
-            _elements = new List<InjectionMapElement>();
+            _elements = new List<MapElement>();
         }
 
         protected override ConfigurationElement CreateNewElement()
         {
-            var element = new InjectionMapElement();
+            var element = new MapElement();
             _elements.Add(element);
 
             return element;
@@ -26,10 +27,10 @@ namespace InjectionMap.Configuration
 
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((InjectionMapElement)element).Map;
+            return ((MapElement)element).Key;
         }
 
-        public new IEnumerator<InjectionMapElement> GetEnumerator()
+        public new IEnumerator<MapElement> GetEnumerator()
         {
             return _elements.GetEnumerator();
         }

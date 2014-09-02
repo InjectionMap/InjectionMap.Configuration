@@ -20,9 +20,7 @@ namespace InjectionMap.Configuration.Test
         {
             using (var mapper = new InjectionMapper())
             {
-                mapper.InitializeFromConfiguration();
-
-
+                mapper.Initialize();
             }
         }
     }

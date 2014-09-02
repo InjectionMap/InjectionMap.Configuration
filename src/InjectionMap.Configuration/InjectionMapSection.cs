@@ -10,12 +10,12 @@ namespace InjectionMap.Configuration
     public class InjectionMapSection : ConfigurationSection
     {
         [ConfigurationProperty("mappings", IsDefaultCollection = true)]
-        [ConfigurationCollection(typeof(InjectionMapElementCollection), AddItemName = "add")]
-        public InjectionMapElementCollection Mappings
+        [ConfigurationCollection(typeof(MapElementCollection), AddItemName = "map")]
+        public MapElementCollection Mappings
         {
             get
             {
-                return (InjectionMapElementCollection)this["mappings"];
+                return (MapElementCollection)this["mappings"];
             }
         }
     }

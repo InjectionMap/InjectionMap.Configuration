@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace InjectionMap.Configuration
 {
-    public class InjectionMapElement : ConfigurationElement
+    public class MapElement : ConfigurationElement
     {
-        [ConfigurationProperty("map", IsKey = true, IsRequired = true)]
-        public string Map
+        [ConfigurationProperty("key", IsKey = true, IsRequired = true)]
+        public string Key
         {
             get
             {
-                return (string)this["map"];
+                return (string)this["key"];
             }
             set
             {
-                this["map"] = value;
+                this["key"] = value;
             }
         }
 
-        [ConfigurationProperty("for", IsKey = true, IsRequired = false)]
+        [ConfigurationProperty("for", IsRequired = false)]
         public string For
         {
             get
@@ -35,7 +35,7 @@ namespace InjectionMap.Configuration
             }
         }
 
-        [ConfigurationProperty("toSelf", IsKey = true, IsRequired = false)]
+        [ConfigurationProperty("toSelf", IsRequired = false)]
         public bool ToSelf
         {
             get
