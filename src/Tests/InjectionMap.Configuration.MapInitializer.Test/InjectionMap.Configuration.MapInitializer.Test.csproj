@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InjectionMap">
-      <HintPath>..\..\..\packages\InjectionMap.1.4.7\lib\net45\InjectionMap.dll</HintPath>
+      <HintPath>..\..\..\packages\InjectionMap.1.4.8\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\..\..\packages\NUnitTestAdapter.1.1\lib\nunit.core.dll</HintPath>

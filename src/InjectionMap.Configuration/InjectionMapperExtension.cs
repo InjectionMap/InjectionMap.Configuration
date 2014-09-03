@@ -72,7 +72,7 @@ namespace InjectionMap.Configuration
                 }
 
                 // create an instance of the MapInitializer
-                var initializer = Activator.CreateInstance(type) as IInjectionMapping;
+                var initializer = Activator.CreateInstance(type) as IMapInitializer;
                 if (initializer == null)
                 {
                     Trace.WriteLine(string.Format("Instance could not be created of type {0}", type.ToString()));
