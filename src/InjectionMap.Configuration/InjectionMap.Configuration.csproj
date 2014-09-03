@@ -33,7 +33,7 @@
     <AssemblyOriginatorKeyFile>..\..\..\InjectionMap.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InjectionMap, Version=1.4.7.0, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">

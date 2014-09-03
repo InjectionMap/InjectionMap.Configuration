@@ -19,6 +19,10 @@ namespace InjectionMap.Configuration
             RegisterInitializers(section);
         }
 
+        /// <summary>
+        /// Registeres all mappings that were defined in the injectionMap section of application config file
+        /// </summary>
+        /// <param name="section"></param>
         private static void RegisterMappings(InjectionMapSection section)
         {
             foreach (var map in section.Mappings)
@@ -50,6 +54,10 @@ namespace InjectionMap.Configuration
             }
         }
 
+        /// <summary>
+        /// Initializes all IMapiInitualizers that were defined in the injectionMap section of application config file
+        /// </summary>
+        /// <param name="section"></param>
         private static void RegisterInitializers(InjectionMapSection section)
         {
             foreach (var initDef in section.MapInitializers)
@@ -77,3 +85,5 @@ namespace InjectionMap.Configuration
         }
     }
 }
+
+
