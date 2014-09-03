@@ -13,5 +13,15 @@ namespace InjectionMap.Configuration
                 return (MapElementCollection)this["mappings"];
             }
         }
+
+        [ConfigurationProperty("initializers", IsDefaultCollection = true)]
+        [ConfigurationCollection(typeof(InjectionMappingElementCollection), AddItemName = "init")]
+        public InjectionMappingElementCollection MapInitializers
+        {
+            get
+            {
+                return (InjectionMappingElementCollection)this["initializers"];
+            }
+        }
     }
 }

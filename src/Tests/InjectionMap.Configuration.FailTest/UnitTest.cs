@@ -7,7 +7,7 @@ namespace InjectionMap.Configuration.FailTest
     public class UnitTest
     {
         [Test]
-        [ExpectedException(typeof(InjectionMap.Exceptions.MappingMismatchException))]
+        [ExpectedException(typeof(ResolverException))]
         public void LoadFailingConfiguration()
         {
             using (var mapper = new InjectionMapper())

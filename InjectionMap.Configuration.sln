@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionMap.Configuration.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionMap.Configuration.FailTest", "src\Tests\InjectionMap.Configuration.FailTest\InjectionMap.Configuration.FailTest.csproj", "{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionMap.Configuration.MapInitializer.Test", "src\Tests\InjectionMap.Configuration.MapInitializer.Test\InjectionMap.Configuration.MapInitializer.Test.csproj", "{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{AB545EC5-3FA1-4540-9403-00DB952E6520} = {3AFC73AA-BFDA-4367-88DE-1BA158E17E7C}
 		{856D5A2E-AFD5-46E0-9E8D-1326240DD00E} = {3AFC73AA-BFDA-4367-88DE-1BA158E17E7C}
 		{00B353AE-F276-4E2A-8D58-7FB37AAC57F5} = {3AFC73AA-BFDA-4367-88DE-1BA158E17E7C}
+		{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB} = {3AFC73AA-BFDA-4367-88DE-1BA158E17E7C}
 	EndGlobalSection
 EndGlobal

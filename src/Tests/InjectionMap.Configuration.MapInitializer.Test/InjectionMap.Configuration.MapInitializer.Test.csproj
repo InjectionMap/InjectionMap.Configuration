@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00B353AE-F276-4E2A-8D58-7FB37AAC57F5}</ProjectGuid>
+    <ProjectGuid>{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InjectionMap.Configuration.FailTest</RootNamespace>
-    <AssemblyName>InjectionMap.Configuration.FailTest</AssemblyName>
+    <RootNamespace>InjectionMap.Configuration.MapInitializer.Test</RootNamespace>
+    <AssemblyName>InjectionMap.Configuration.MapInitializer.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -72,7 +72,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ObjectTypeOne.cs" />
     <Compile Include="UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

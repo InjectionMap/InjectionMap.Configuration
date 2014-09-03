@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InjectionMap">
+      <HintPath>..\..\..\packages\InjectionMap.1.4.7\lib\net45\InjectionMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKeyOne.cs" />
+    <Compile Include="IKeyThree.cs" />
     <Compile Include="IKeyTwo.cs" />
+    <Compile Include="InjectionMapInitializer.cs" />
+    <Compile Include="ObjectTypeThree.cs" />
     <Compile Include="ObjectTypeTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

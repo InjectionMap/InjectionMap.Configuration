@@ -17,7 +17,7 @@ namespace InjectionMap.Configuration.Test
         }
 
         [Test]
-        public void LoadConfigurationUsingInjectionMapExtension()
+        public void LoadConfiguration()
         {
             using (var mapper = new InjectionMapper())
             {
@@ -33,7 +33,22 @@ namespace InjectionMap.Configuration.Test
                 Assert.IsNotNull(keyTwo);
 
                 var typeOne = resolver.Resolve<ObjectTypeOne>();
-                Assert.IsNotNull(keyTwo);
+                Assert.IsNotNull(typeOne);
+            }
+        }
+
+        [Test]
+        public void LoadConfigurationWithoutMapInitializer()
+        {
+            using (var mapper = new InjectionMapper())
+            {
+                mapper.Initialize();
+            }
+
+            using (var resolver = new InjectionResolver())
+            {
+                var keyThree = resolver.Resolve<IKeyThree>();
+                Assert.IsNull(keyThree);
             }
         }
     }
