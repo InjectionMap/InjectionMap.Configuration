@@ -28,6 +28,10 @@ Define the mappings in the config file.
       <!-- Map ObjectTypeOne to self -->
       <map key="TestApp.ObjectTypeOne, TestApp" toSelf="true"/>
     </mappings>
+    <initializers>
+      <!-- Register MapInitializers -->
+      <init type="TestApp.InjectionMapInitializer, TestApp"/>
+    </initializers>
   </injectionMap>
 </configuration>
 ```
