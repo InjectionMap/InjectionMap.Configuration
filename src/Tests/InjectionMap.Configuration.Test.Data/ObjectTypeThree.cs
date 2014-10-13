@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InjectionMap.Configuration.Test.Data
 {
-    public class ObjectTypeThree : IKeyThree
+    public class ObjectTypeThree : IContractThree
     {
     }
 }

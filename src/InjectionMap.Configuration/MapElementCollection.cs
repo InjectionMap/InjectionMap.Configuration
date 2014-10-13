@@ -23,7 +23,7 @@ namespace InjectionMap.Configuration
 
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((MapElement)element).Key;
+            return ((MapElement)element).Contract;
         }
 
         public new IEnumerator<MapElement> GetEnumerator()

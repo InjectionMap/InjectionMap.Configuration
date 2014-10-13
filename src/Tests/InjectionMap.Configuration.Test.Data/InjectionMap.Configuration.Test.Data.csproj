@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InjectionMap">
-      <HintPath>..\..\..\packages\InjectionMap.1.4.8\lib\net45\InjectionMap.dll</HintPath>
+    <Reference Include="InjectionMap, Version=1.5.0.2, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\InjectionMap.1.5.0\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IKeyOne.cs" />
-    <Compile Include="IKeyThree.cs" />
-    <Compile Include="IKeyTwo.cs" />
+    <Compile Include="IContractOne.cs" />
+    <Compile Include="IContractThree.cs" />
+    <Compile Include="IContractTwo.cs" />
     <Compile Include="InjectionMapInitializer.cs" />
     <Compile Include="ObjectTypeThree.cs" />
     <Compile Include="ObjectTypeTwo.cs" />

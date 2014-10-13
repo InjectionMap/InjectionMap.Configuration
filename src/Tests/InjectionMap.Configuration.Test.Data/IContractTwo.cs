@@ -1,7 +1,7 @@
 ﻿
 namespace InjectionMap.Configuration.Test.Data
 {
-    public interface IKeyTwo
+    public interface IContractTwo
     {
     }
 }

@@ -11,18 +11,18 @@ namespace InjectionMap.Configuration
     public class InjectionMappingElement : ConfigurationElement
     {
         /// <summary>
-        /// The key type that is used to mark the mapping
+        /// The contract type that is used to mark the mapping
         /// </summary>
-        [ConfigurationProperty("type", IsKey = true, IsRequired = true)]
-        public string Type
+        [ConfigurationProperty("contract", IsKey = true, IsRequired = true)]
+        public string Contract
         {
             get
             {
-                return (string)this["type"];
+                return (string)this["contract"];
             }
             set
             {
-                this["type"] = value;
+                this["contract"] = value;
             }
         }
     }

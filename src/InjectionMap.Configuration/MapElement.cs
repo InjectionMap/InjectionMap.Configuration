@@ -5,39 +5,39 @@ namespace InjectionMap.Configuration
     public class MapElement : ConfigurationElement
     {
         /// <summary>
-        /// The key type that is used to mark the mapping
+        /// The contract type that is used to mark the mapping
         /// </summary>
-        [ConfigurationProperty("key", IsKey = true, IsRequired = true)]
-        public string Key
+        [ConfigurationProperty("contract", IsKey = true, IsRequired = true)]
+        public string Contract
         {
             get
             {
-                return (string)this["key"];
+                return (string)this["contract"];
             }
             set
             {
-                this["key"] = value;
+                this["contract"] = value;
             }
         }
 
         /// <summary>
         /// The type that will be mapped and resolved
         /// </summary>
-        [ConfigurationProperty("for", IsRequired = false)]
-        public string For
+        [ConfigurationProperty("mappedType", IsRequired = false)]
+        public string MappedType
         {
             get
             {
-                return (string)this["for"];
+                return (string)this["mappedType"];
             }
             set
             {
-                this["for"] = value;
+                this["mappedType"] = value;
             }
         }
 
         /// <summary>
-        /// Defines if the key type is mapped to itsself an has to be resolved
+        /// Defines if the contract type is mapped to itsself an has to be resolved
         /// </summary>
         [ConfigurationProperty("toSelf", DefaultValue = false, IsRequired = false)]
         public bool ToSelf

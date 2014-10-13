@@ -5,7 +5,7 @@ namespace InjectionMap.Configuration.Test.Data
     {
         public void InitializeMap(IMappingProvider container)
         {
-            container.Map<IKeyThree, ObjectTypeThree>();
+            container.Map<IContractThree, ObjectTypeThree>();
         }
     }
 }

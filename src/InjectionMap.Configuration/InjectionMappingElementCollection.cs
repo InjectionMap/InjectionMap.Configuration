@@ -27,7 +27,7 @@ namespace InjectionMap.Configuration
 
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((InjectionMappingElement)element).Type;
+            return ((InjectionMappingElement)element).Contract;
         }
 
         public new IEnumerator<InjectionMappingElement> GetEnumerator()

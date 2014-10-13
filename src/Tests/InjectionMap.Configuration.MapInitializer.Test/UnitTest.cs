@@ -16,7 +16,7 @@ namespace InjectionMap.Configuration.MapInitializer.Test
 
             using (var resolver = new InjectionResolver())
             {
-                var keyThree = resolver.Resolve<IKeyThree>();
+                var keyThree = resolver.Resolve<IContractThree>();
                 Assert.IsNotNull(keyThree);
             }
         }

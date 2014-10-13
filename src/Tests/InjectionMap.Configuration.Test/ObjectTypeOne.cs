@@ -2,7 +2,7 @@
 
 namespace InjectionMap.Configuration.Test
 {
-    public class ObjectTypeOne : IKeyOne
+    public class ObjectTypeOne : IContractOne
     {
     }
 }

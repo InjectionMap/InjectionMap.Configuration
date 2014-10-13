@@ -26,10 +26,10 @@ namespace InjectionMap.Configuration.Test
 
             using (var resolver = new InjectionResolver())
             {
-                var keyOne = resolver.Resolve<IKeyOne>();
+                var keyOne = resolver.Resolve<IContractOne>();
                 Assert.IsNotNull(keyOne);
 
-                var keyTwo = resolver.Resolve<IKeyTwo>();
+                var keyTwo = resolver.Resolve<IContractTwo>();
                 Assert.IsNotNull(keyTwo);
 
                 var typeOne = resolver.Resolve<ObjectTypeOne>();
@@ -47,7 +47,7 @@ namespace InjectionMap.Configuration.Test
 
             using (var resolver = new InjectionResolver())
             {
-                var keyThree = resolver.Resolve<IKeyThree>();
+                var keyThree = resolver.Resolve<IContractThree>();
                 Assert.IsNull(keyThree);
             }
         }

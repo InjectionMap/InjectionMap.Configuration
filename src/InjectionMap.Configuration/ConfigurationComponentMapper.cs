@@ -1,7 +1,7 @@
 ﻿
 namespace InjectionMap.Configuration
 {
-    public class ConfigurationComponentMapper<TKey, TMap> : ComponentMapper, IConfigurationComponentMapper where TMap : TKey
+    public class ConfigurationComponentMapper<TContract, TMap> : ComponentMapper, IConfigurationComponentMapper where TMap : TContract
     {
         //public IBindingExpression<TMap> Map()
         //{
@@ -10,7 +10,7 @@ namespace InjectionMap.Configuration
 
         public void Map()
         {
-            Map<TKey, TMap>();
+            Map<TContract, TMap>();
         }
     }
 }
