@@ -9,6 +9,17 @@ namespace InjectionMap.Configuration.Test
     [TestFixture]
     public class UnitTest
     {
+        [SetUp]
+        public void Setup()
+        {
+            using (var mapper = new InjectionMapper())
+            {
+                mapper.Clean<IContractOne>();
+                mapper.Clean<IContractTwo>();
+                mapper.Clean<ObjectTypeOne>();
+            }
+        }
+
         [Test]
         public void LoadConfigurationWithConfigurationManager()
         {
@@ -49,6 +60,42 @@ namespace InjectionMap.Configuration.Test
             {
                 var keyThree = resolver.Resolve<IContractThree>();
                 Assert.IsNull(keyThree);
+            }
+        }
+
+        [Test]
+        public void LoadConfigurationToCustomContext()
+        {
+            var context = new MappingContext();
+            using (var mapper = new InjectionMapper(context))
+            {
+                mapper.Initialize();
+            }
+
+            using (var resolver = new InjectionResolver())
+            {
+                // default context has to deliver null
+                var keyOne = resolver.Resolve<IContractOne>();
+                Assert.IsNull(keyOne);
+
+                var keyTwo = resolver.Resolve<IContractTwo>();
+                Assert.IsNull(keyTwo);
+
+                //var typeOne = resolver.Resolve<ObjectTypeOne>();
+                //Assert.IsNull(typeOne);
+            }
+
+            using (var resolver = new InjectionResolver(context))
+            {
+                // resolve from custom context
+                var keyOne = resolver.Resolve<IContractOne>();
+                Assert.IsNotNull(keyOne);
+
+                var keyTwo = resolver.Resolve<IContractTwo>();
+                Assert.IsNotNull(keyTwo);
+
+                //var typeOne = resolver.Resolve<ObjectTypeOne>();
+                //Assert.IsNotNull(typeOne);
             }
         }
     }

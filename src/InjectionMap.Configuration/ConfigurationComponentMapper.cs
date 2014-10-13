@@ -3,11 +3,15 @@ namespace InjectionMap.Configuration
 {
     public class ConfigurationComponentMapper<TContract, TMap> : ComponentMapper, IConfigurationComponentMapper where TMap : TContract
     {
-        //public IBindingExpression<TMap> Map()
-        //{
-        //    return Map<TKey, TMap>();
-        //}
+        public ConfigurationComponentMapper()
+        {
+        }
 
+        public ConfigurationComponentMapper(IMappingContext context)
+            : base(context)
+        {
+        }
+        
         public void Map()
         {
             Map<TContract, TMap>();

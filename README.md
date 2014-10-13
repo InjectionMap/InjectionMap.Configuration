@@ -2,19 +2,18 @@
 
 # InjectionMap.Configuration
 ------------------------------
-InjectionMap.Configuration is a small extension to InjectionMap for defining mappings in the application configuration file. 
+InjectionMap.Configuration is a small extension to InjectionMap that allows the definition of mappings in the application configuration file. 
 
 # Usage
 ------------------------------
 
 ```csharp
-public interface IKeyOne { }
+public interface IContractOne { }
 
-public class ObjectTypeOne : IKeyOne { }
+public class ObjectTypeOne : IContractOne { }
 ```
 Define the mappings in the config file.
 ```csharp
-<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
     <!-- Define the section -->
@@ -23,14 +22,14 @@ Define the mappings in the config file.
 
   <injectionMap>
     <mappings>
-      <!-- Map IKeyOne to ObjectTypeOne -->
-      <map key="TestApp.IKeyOne, TestApp" for="TestApp.ObjectTypeOne, TestApp"/>
+      <!-- Map IContractOne to ObjectTypeOne -->
+      <map contract="TestApp.IContractOne, TestApp" mappedType="TestApp.ObjectTypeOne, TestApp"/>
       <!-- Map ObjectTypeOne to self -->
-      <map key="TestApp.ObjectTypeOne, TestApp" toSelf="true"/>
+      <map contract="TestApp.ObjectTypeOne, TestApp" toSelf="true"/>
     </mappings>
     <initializers>
       <!-- Register MapInitializers -->
-      <init type="TestApp.InjectionMapInitializer, TestApp"/>
+      <init contract="TestApp.InjectionMapInitializer, TestApp"/>
     </initializers>
   </injectionMap>
 </configuration>
@@ -48,7 +47,7 @@ using (var mapper = new InjectionMapper())
 ```
 ## Installation
 ------------------------------
-InjectionMap can be installed from [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) through the package manager console:  
+InjectionMap.Configuration can be installed from [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) through the package manager console:  
 
     PM > Install-Package InjectionMap.Configuration
 

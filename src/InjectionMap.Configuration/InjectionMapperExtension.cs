@@ -13,17 +13,27 @@ namespace InjectionMap.Configuration
         public static void Initialize(this InjectionMapper mapper)
         {
             var section = ConfigurationManager.GetSection("injectionMap") as InjectionMapSection;
+            
+            RegisterMappings(section, mapper.Context);
 
-            RegisterMappings(section);
-
-            RegisterInitializers(section);
+            RegisterInitializers(section, mapper.Context);
         }
+
+        
+        //public static void Initialize(this InjectionMapper mapper, MappingContainer container)
+        //{
+        //    var section = ConfigurationManager.GetSection("injectionMap") as InjectionMapSection;
+
+        //    RegisterMappings(section, container);
+
+        //    RegisterInitializers(section, container);
+        //}
 
         /// <summary>
         /// Registeres all mappings that were defined in the injectionMap section of application config file
         /// </summary>
         /// <param name="section"></param>
-        private static void RegisterMappings(InjectionMapSection section)
+        private static void RegisterMappings(InjectionMapSection section, IMappingContext context)
         {
             foreach (var map in section.Mappings)
             {
@@ -49,7 +59,7 @@ namespace InjectionMap.Configuration
                 // Create a Type object representing the constructed generic type.
                 Type constructed = generic.MakeGenericType(typeArgs);
 
-                var componentMapper = Activator.CreateInstance(constructed) as IConfigurationComponentMapper;
+                var componentMapper = Activator.CreateInstance(constructed, context) as IConfigurationComponentMapper;
                 componentMapper.Map();
             }
         }
@@ -58,7 +68,7 @@ namespace InjectionMap.Configuration
         /// Initializes all IMapiInitualizers that were defined in the injectionMap section of application config file
         /// </summary>
         /// <param name="section"></param>
-        private static void RegisterInitializers(InjectionMapSection section)
+        private static void RegisterInitializers(InjectionMapSection section, IMappingContext context)
         {
             foreach (var initDef in section.MapInitializers)
             {
@@ -79,8 +89,13 @@ namespace InjectionMap.Configuration
                     continue;
                 }
 
-                // initialize the IMapInitializers
-                InjectionMapper.Initialize(initializer);
+                if (context != null)
+                {
+                    // initialize the IMapInitializers
+                    InjectionMapper.Initialize(initializer, context);
+                }
+                else
+                    InjectionMapper.Initialize(initializer);
             }
         }
     }
