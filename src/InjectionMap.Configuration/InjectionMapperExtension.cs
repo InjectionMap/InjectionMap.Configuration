@@ -53,11 +53,8 @@ namespace InjectionMap.Configuration
                 // Create a type object representing the generic ConfigurationComponentMapper type, by omitting the type arguments 
                 Type generic = typeof(ConfigurationComponentMapper<,>);
 
-                // Create an array of types to substitute for the type parameters of Dictionary. The contract is of type string, and the type to be contained in the Dictionary is Test.
-                Type[] typeArgs = { contract, reference };
-
                 // Create a Type object representing the constructed generic type.
-                Type constructed = generic.MakeGenericType(typeArgs);
+                Type constructed = generic.MakeGenericType(contract, reference);
 
                 var componentMapper = Activator.CreateInstance(constructed, context) as IConfigurationComponentMapper;
                 componentMapper.Map();
