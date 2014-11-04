@@ -18,7 +18,7 @@ namespace InjectionMap.Configuration.MapInitializer.Test
         [Test]
         public void LoadConfigurationWithMapinitializer()
         {
-            using (var mapper = new InjectionMapper())
+            using (var mapper = new InjectionMap.MapInitializer())
             {
                 mapper.Initialize();
             }
@@ -34,7 +34,7 @@ namespace InjectionMap.Configuration.MapInitializer.Test
         public void LoadConfigurationWithMapinitializerToCustomContext()
         {
             var context = new MappingContext();
-            using (var mapper = new InjectionMapper(context))
+            using (var mapper = new InjectionMap.MapInitializer(context))
             {
                 mapper.Initialize();
             }

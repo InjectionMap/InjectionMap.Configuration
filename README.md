@@ -35,12 +35,12 @@ Define the mappings in the config file.
 </configuration>
 ```
 The Section has to be called "injectionMap" for InjectionMap to find it.
-Import the namespace InjectionMap.Configuration and create a instance of InjectionMapper. To initialize the configuration just call the extensionmethod Initialize() on InjectionMapper. This call should only be made once per AppDomain, ideally in the application startup.
+Import the namespace InjectionMap.Configuration and create a instance of MapInitializer. To initialize the configuration just call the extensionmethod Initialize() on MapInitializer. This call should only be made once per AppDomain, ideally in the application startup.
 ```csharp
 using InjectionMap.Configuration;
 ...
 
-using (var mapper = new InjectionMapper())
+using (var mapper = new MapInitializer())
 {
     mapper.Initialize();
 }

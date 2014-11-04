@@ -10,7 +10,7 @@ namespace InjectionMap.Configuration.FailTest
         [ExpectedException(typeof(ResolverException))]
         public void LoadFailingConfiguration()
         {
-            using (var mapper = new InjectionMapper())
+            using (var mapper = new MapInitializer())
             {
                 mapper.Initialize();
             }

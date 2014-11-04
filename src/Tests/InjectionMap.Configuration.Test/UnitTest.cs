@@ -30,7 +30,7 @@ namespace InjectionMap.Configuration.Test
         [Test]
         public void LoadConfiguration()
         {
-            using (var mapper = new InjectionMapper())
+            using (var mapper = new MapInitializer())
             {
                 mapper.Initialize();
             }
@@ -51,7 +51,7 @@ namespace InjectionMap.Configuration.Test
         [Test]
         public void LoadConfigurationWithoutMapInitializer()
         {
-            using (var mapper = new InjectionMapper())
+            using (var mapper = new MapInitializer())
             {
                 mapper.Initialize();
             }
@@ -67,7 +67,7 @@ namespace InjectionMap.Configuration.Test
         public void LoadConfigurationToCustomContext()
         {
             var context = new MappingContext();
-            using (var mapper = new InjectionMapper(context))
+            using (var mapper = new MapInitializer(context))
             {
                 mapper.Initialize();
             }

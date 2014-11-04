@@ -10,7 +10,7 @@ namespace InjectionMap.Configuration
         /// Extension method that registers the mappings defined in the config file in the section named injectionMap
         /// </summary>
         /// <param name="mapper"></param>
-        public static void Initialize(this InjectionMapper mapper)
+        public static void Initialize(this MapInitializer mapper)
         {
             var section = ConfigurationManager.GetSection("injectionMap") as InjectionMapSection;
             
@@ -18,16 +18,6 @@ namespace InjectionMap.Configuration
 
             RegisterInitializers(section, mapper.Context);
         }
-
-        
-        //public static void Initialize(this InjectionMapper mapper, MappingContainer container)
-        //{
-        //    var section = ConfigurationManager.GetSection("injectionMap") as InjectionMapSection;
-
-        //    RegisterMappings(section, container);
-
-        //    RegisterInitializers(section, container);
-        //}
 
         /// <summary>
         /// Registeres all mappings that were defined in the injectionMap section of application config file
@@ -89,10 +79,15 @@ namespace InjectionMap.Configuration
                 if (context != null)
                 {
                     // initialize the IMapInitializers
-                    InjectionMapper.Initialize(initializer, context);
+                    var init = new MapInitializer(context);
+                    init.Initialize(initializer);
                 }
                 else
-                    InjectionMapper.Initialize(initializer);
+                {
+                    var init = new MapInitializer();
+                    init.Initialize(initializer);
+                }
+
             }
         }
     }
