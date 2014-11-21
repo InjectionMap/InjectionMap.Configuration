@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionMap.Configuration.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionMap.Configuration.MapInitializer.Test", "src\Tests\InjectionMap.Configuration.MapInitializer.Test\InjectionMap.Configuration.MapInitializer.Test.csproj", "{4BC6D1C7-150D-43F7-827C-77A9CC7D4EEB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED45038D-10E3-422E-BC6C-5D8FE7B3FEAC}"
+	ProjectSection(SolutionItems) = preProject
+		src\InjectionMap.Configuration.nuspec = src\InjectionMap.Configuration.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

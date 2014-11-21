@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>InjectionMap.Configuration</id>
+    <version>1.2.0</version>
+    <title>InjectionMap.Configuration</title>
+    <authors>Christian Walpen</authors>
+    <owners>Christian Walpen</owners>
+    <licenseUrl>https://github.com/InjectionMap/InjectionMap.Configuration/raw/master/License.txt</licenseUrl>
+    <projectUrl>http://wicked-flame.blogspot.ch/p/injectionmap.html</projectUrl>
+    <iconUrl>https://github.com/InjectionMap/InjectionMap.Configuration/raw/master/assets/InjectionMap.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>InjectionMap.Configuration is a small extension to InjectionMap for defining mappings in the application configuration file.</description>
+    <summary>InjectionMap.Configuration is a small extension to InjectionMap for defining mappings in the application configuration file.</summary>
+    <releaseNotes>
+      1.2.0
+      - Map to and reslove from a named context
+      - Moved Initializer methods from InjectionMapper to MapInitializer
+      1.1.0
+      - Rename Key to Contract and for to mappedType
+      - Map to custom context
+      1.0.2
+      - Added support to initialize IMapInitializers in config files
+      - Added support to register Mappings in the config files
+    </releaseNotes>
+    <language />
+    <tags>InjectionMap IoC DI Configuration</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="InjectionMap" version="1.5.4" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="InjectionMap.Configuration\bin\Release\InjectionMap.Configuration.dll" target="lib\net45\InjectionMap.Configuration.dll" />
+  </files>
+</package>
