@@ -1,4 +1,5 @@
-﻿
+﻿using InjectionMap.Configuration.Internal;
+
 namespace InjectionMap.Configuration
 {
     public class ConfigurationComponentMapper<TContract, TMap> : ComponentMapper, IConfigurationComponentMapper where TMap : TContract
@@ -12,9 +13,11 @@ namespace InjectionMap.Configuration
         {
         }
         
-        public void Map()
+        public IComponentExpression Map()
         {
-            Map<TContract, TMap>();
+            var expression = Map<TContract, TMap>() as IComponentExpression;
+
+            return new ComponentExpression(Context as IComponentCollection, expression.Component);
         }
     }
 }
