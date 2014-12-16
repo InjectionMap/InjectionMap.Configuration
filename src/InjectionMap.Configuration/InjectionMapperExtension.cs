@@ -1,7 +1,8 @@
-﻿using System;
+﻿using InjectionMap.Configuration;
+using System;
 using System.Configuration;
 
-namespace InjectionMap.Configuration
+namespace InjectionMap
 {
     public static class InjectionMapperExtension
     {

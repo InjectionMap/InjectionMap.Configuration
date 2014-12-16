@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>InjectionMap.Configuration</id>
-    <version>1.2.0</version>
+    <version>1.3.0-RC1</version>
     <title>InjectionMap.Configuration</title>
     <authors>Christian Walpen</authors>
     <owners>Christian Walpen</owners>
@@ -13,6 +13,10 @@
     <description>InjectionMap.Configuration is a small extension to InjectionMap for defining mappings in the application configuration file.</description>
     <summary>InjectionMap.Configuration is a small extension to InjectionMap for defining mappings in the application configuration file.</summary>
     <releaseNotes>
+      1.3.0
+      - Added: PropertyInjection - Automaticaly resolve and inject values to properties
+      - Added: Logging
+      - Refactored: Moved Initialize Extensionmethod from InjectionMap.Configuration to InjectionMap namespace
       1.2.0
       - Map to and reslove from a named context
       - Moved Initializer methods from InjectionMapper to MapInitializer

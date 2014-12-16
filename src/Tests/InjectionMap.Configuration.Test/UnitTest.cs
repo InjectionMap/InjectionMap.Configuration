@@ -107,7 +107,7 @@ namespace InjectionMap.Configuration.Test
         }
 
         [Test]
-        public void ProoertyInjectionTest()
+        public void PropertyInjectionTest()
         {
             using (var mapper = new MapInitializer())
             {
