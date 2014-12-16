@@ -24,6 +24,7 @@ namespace InjectionMap.Configuration
         /// Registeres all mappings that were defined in the injectionMap section of application config file
         /// </summary>
         /// <param name="section"></param>
+        /// <param name="context"></param>
         public void RegisterMappings(InjectionMapSection section, IMappingContext context)
         {
             foreach (var map in section.Mappings)
@@ -38,7 +39,7 @@ namespace InjectionMap.Configuration
 
                 if (reference == null)
                 {
-                    Logger.Write(string.Format("InjectionMap.Configuration - Type cannot be resolved from definition: {0} because the Type cannot be identifie from {0}", string.IsNullOrEmpty(map.MappedType) ? map.Contract : map.MappedType), "ConfigurationMapper", "Configuration");
+                    Logger.Write(string.Format("InjectionMap.Configuration - Type cannot be resolved from definition: {0} because the Type cannot be identifie from {0}", string.IsNullOrEmpty(map.MappedType) ? map.Contract : map.MappedType), LogLevel.Error, "ConfigurationMapper", "Configuration");
                     throw new ResolverException(reference, string.Format("Type cannot be resolved from definition: {0} because the Type cannot be identifie from {0}", string.IsNullOrEmpty(map.MappedType) ? map.Contract : map.MappedType));
                 }
 
@@ -49,9 +50,15 @@ namespace InjectionMap.Configuration
                 Type constructed = generic.MakeGenericType(contract, reference);
 
                 var componentMapper = Activator.CreateInstance(constructed, context) as IConfigurationComponentMapper;
-                componentMapper.Map();
+                var expression = componentMapper.Map();
 
-                Logger.Write(string.Format("InjectionMap.Configuration - Mapped contract type {0} to {1}", contract.Name, reference.Name), "ConfigurationMapper", "Configuration");
+                foreach (var property in map.InjectionProperties)
+                {
+                    Logger.Write(string.Format("InjectionMap.Configuration - Create map for PropertyInjection on {0} for property {1}", contract.Name, property.Name), LogLevel.Info, "ConfigurationMapper", "Configuration");
+                    expression.InjectProperty(contract, property.Name);
+                }
+
+                Logger.Write(string.Format("InjectionMap.Configuration - Mapped contract type {0} to {1}", contract.Name, reference.Name), LogLevel.Info, "ConfigurationMapper", "Configuration");
             }
         }
 
@@ -59,6 +66,7 @@ namespace InjectionMap.Configuration
         /// Initializes all IMapiInitualizers that were defined in the injectionMap section of application config file
         /// </summary>
         /// <param name="section"></param>
+        /// <param name="context"></param>
         public void RegisterInitializers(InjectionMapSection section, IMappingContext context)
         {
             foreach (var initDef in section.MapInitializers)
@@ -69,7 +77,7 @@ namespace InjectionMap.Configuration
                 var type = Type.GetType(initDef.Contract);
                 if (type == null)
                 {
-                    Logger.Write(string.Format("InjectionMap.COnfiguration - Cannot initialize IMapInitializer: {0} because the Type cannot be identifie from {0}", initDef.Contract), "ConfigurationMapper", "Configuration");
+                    Logger.Write(string.Format("InjectionMap.COnfiguration - Cannot initialize IMapInitializer: {0} because the Type cannot be identifie from {0}", initDef.Contract), LogLevel.Error, "ConfigurationMapper", "Configuration");
                     throw new ResolverException(type, string.Format("Cannot initialize IMapInitializer: {0} because the Type cannot be identifie from {0}", initDef.Contract));
                 }
 
@@ -77,11 +85,11 @@ namespace InjectionMap.Configuration
                 var initializer = Activator.CreateInstance(type) as IMapInitializer;
                 if (initializer == null)
                 {
-                    Logger.Write(string.Format("InjectionMap.COnfiguration - Instance could not be created of type {0}", type.Name), "ConfigurationMapper", "Configuration");
+                    Logger.Write(string.Format("InjectionMap.COnfiguration - Instance could not be created of type {0}", type.Name), LogLevel.Warning, "ConfigurationMapper", "Configuration");
                     continue;
                 }
 
-                Logger.Write(string.Format("InjectionMap.COnfiguration - Initialized mappings from {0}", type.Name), "ConfigurationMapper", "Configuration");
+                Logger.Write(string.Format("InjectionMap.COnfiguration - Initialized mappings from {0}", type.Name), LogLevel.Info, "ConfigurationMapper", "Configuration");
 
                 if (context != null)
                 {
@@ -94,7 +102,6 @@ namespace InjectionMap.Configuration
                     var init = new MapInitializer();
                     init.Initialize(initializer);
                 }
-
             }
         }
     }

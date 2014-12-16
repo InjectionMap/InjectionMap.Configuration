@@ -12,11 +12,11 @@ namespace InjectionMap.Configuration
             : base(context)
         {
         }
-        
-        public IComponentExpression Map()
+
+        public IConfigurationExpression Map()
         {
             var expression = Map<TContract, TMap>() as IComponentExpression;
-
+            
             return new ComponentExpression(Context as IComponentCollection, expression.Component);
         }
     }

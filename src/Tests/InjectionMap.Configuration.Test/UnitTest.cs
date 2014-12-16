@@ -3,12 +3,19 @@ using System.Configuration;
 using System.Linq;
 using NUnit.Framework;
 using InjectionMap.Configuration.Test.Data;
+using InjectionMap.Tracing;
+using InjectionMap.Configuration.Test.Data.Tracing;
 
 namespace InjectionMap.Configuration.Test
 {
     [TestFixture]
     public class UnitTest
     {
+        static UnitTest()
+        {
+            LoggerFactory.LoggerCallback = () => new TraceLogger();
+        }
+
         [SetUp]
         public void Setup()
         {
@@ -96,6 +103,26 @@ namespace InjectionMap.Configuration.Test
 
                 //var typeOne = resolver.Resolve<ObjectTypeOne>();
                 //Assert.IsNotNull(typeOne);
+            }
+        }
+
+        [Test]
+        public void ProoertyInjectionTest()
+        {
+            using (var mapper = new MapInitializer())
+            {
+                mapper.Initialize();
+            }
+
+            using (var resolver = new InjectionResolver())
+            {
+                var obj = resolver.Resolve<IObjectWithProperty>();
+
+                Assert.IsNotNull(obj.Contract);
+                Assert.IsTrue(obj.Contract is ObjectTypeOne);
+
+                Assert.IsNotNull(obj.ContractOne);
+                Assert.IsTrue(obj.ContractOne is ObjectTypeOne);
             }
         }
     }

@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InjectionMap, Version=1.5.5.2, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">
+    <Reference Include="InjectionMap, Version=1.5.5.5, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\InjectionMap.1.5.5-RC2\lib\net45\InjectionMap.dll</HintPath>
+      <HintPath>..\..\..\packages\InjectionMap.1.5.5-RC5\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +50,7 @@
     <Compile Include="ObjectTypeThree.cs" />
     <Compile Include="ObjectTypeTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracing\TraceLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

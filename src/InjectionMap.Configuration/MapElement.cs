@@ -51,5 +51,16 @@ namespace InjectionMap.Configuration
                 this["toSelf"] = value;
             }
         }
+
+
+        [ConfigurationProperty("properties", IsDefaultCollection = true)]
+        [ConfigurationCollection(typeof(PropertyElementCollection), AddItemName = "property")]
+        public PropertyElementCollection InjectionProperties
+        {
+            get
+            {
+                return (PropertyElementCollection)this["properties"];
+            }
+        }
     }
 }
