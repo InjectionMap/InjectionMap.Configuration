@@ -9,8 +9,17 @@ InjectionMap.Configuration is a small extension to InjectionMap that allows the 
 
 ```csharp
 public interface IContractOne { }
+public interface IContractTwo 
+{
+	IContractOne Contract{ get; set; }
+}
 
 public class ObjectTypeOne : IContractOne { }
+public class ObjectTypeTwo : IContractTwo 
+{ 
+	// Property for PropertyInjection
+	public IContractOne Contract { get; set; }
+}
 ```
 Define the mappings in the config file.
 ```csharp
@@ -26,6 +35,13 @@ Define the mappings in the config file.
       <map contract="TestApp.IContractOne, TestApp" mappedType="TestApp.ObjectTypeOne, TestApp"/>
       <!-- Map ObjectTypeOne to self -->
       <map contract="TestApp.ObjectTypeOne, TestApp" toSelf="true"/>
+      <!-- PropertyInjection -->
+      <map contract="TestApp.IContractTwo, TestApp" mappedType="TestApp.ObjectTypeTwo, TestApp">
+	      <properties>
+		      <!-- The property "Contract" will be resolved and injected -->
+	          <property name="Contract"/>
+	      </properties>
+      </map>
     </mappings>
     <initializers>
       <!-- Register MapInitializers -->
@@ -37,7 +53,7 @@ Define the mappings in the config file.
 The Section has to be called "injectionMap" for InjectionMap to find it.
 Import the namespace InjectionMap.Configuration and create a instance of MapInitializer. To initialize the configuration just call the extensionmethod Initialize() on MapInitializer. This call should only be made once per AppDomain, ideally in the application startup.
 ```csharp
-using InjectionMap.Configuration;
+using InjectionMap;
 ...
 
 using (var mapper = new MapInitializer())
