@@ -2,7 +2,7 @@
 
 # InjectionMap.Configuration
 ------------------------------
-InjectionMap.Configuration is a small extension to InjectionMap that allows the definition of mappings in the application configuration file. 
+InjectionMap.Configuration is a small extension to InjectionMap that allows the definition of mappings in the application configuration file. The definition of mappings is created with xml based late binding.
 
 # Usage
 ------------------------------
