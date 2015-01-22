@@ -37,8 +37,9 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InjectionMap">
-      <HintPath>..\..\packages\InjectionMap.1.5.5-RC6\lib\net45\InjectionMap.dll</HintPath>
+    <Reference Include="InjectionMap, Version=1.5.5.14, Culture=neutral, PublicKeyToken=73071bfdb2f56bce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\InjectionMap.1.5.5\lib\net45\InjectionMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
