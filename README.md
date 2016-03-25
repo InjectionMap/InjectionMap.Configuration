@@ -2,6 +2,7 @@
 
 # InjectionMap.Configuration
 ------------------------------
+[![Build status](https://ci.appveyor.com/api/projects/status/4ry3k1pm92q64wr9/branch/master?svg=true)](https://ci.appveyor.com/project/chriswalpen/injectionmap-configuration/branch/master)  
 InjectionMap.Configuration is a small extension to InjectionMap that allows the definition of mappings in the application configuration file. The definition of mappings is created with xml based late binding.
 
 # Usage
