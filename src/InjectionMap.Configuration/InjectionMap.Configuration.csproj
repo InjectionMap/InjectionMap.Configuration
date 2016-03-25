@@ -31,7 +31,7 @@
     <DocumentationFile>bin\Release\InjectionMap.Configuration.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\..\InjectionMap.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\InjectionMap.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -64,7 +64,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\InjectionMap.snk">
+    <None Include="..\InjectionMap.snk">
       <Link>Properties\InjectionMap.snk</Link>
     </None>
     <None Include="packages.config" />
